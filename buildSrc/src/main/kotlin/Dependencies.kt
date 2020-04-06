@@ -30,11 +30,13 @@ object Libraries {
             const val ktx = "1.2.0"
             const val jetPack = "1.1.0"
             const val constraintLayout = "1.1.3"
+            const val lifeCycle = "2.2.0"
         }
 
         const val appCompat = "androidx.appcompat:appcompat:${Versions.jetPack}"
         const val ktxCore = "androidx.core:core-ktx:${Versions.ktx}"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+        const val viewModelLifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifeCycle}"
     }
 
     object Test {
@@ -49,6 +51,25 @@ object Libraries {
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     }
 
+    object Firebase {
+        private object Versions {
+            const val playServiceAuth = "17.0.0"
+            const val firebaseAuth = "19.3.0"
+        }
+
+        const val firebaseAuth = "com.google.firebase:firebase-auth:${Versions.firebaseAuth}"
+        const val playServiceAuth = "com.google.android.gms:play-services-auth:${Versions.playServiceAuth}"
+
+    }
+
+    object Coroutines {
+
+        private object Versions {
+            const val core = "1.3.5"
+        }
+
+        const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.core}"
+    }
 
 }
 

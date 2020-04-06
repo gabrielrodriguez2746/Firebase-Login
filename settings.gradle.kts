@@ -1,3 +1,3 @@
-rootProject.name = "Firebase Login"
-
+include(":chat")
+include(":login")
 include(":app")
