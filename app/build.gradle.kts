@@ -29,6 +29,13 @@ android {
             )
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions.jvmTarget = "1.8"
 }
 
 dependencies {
@@ -38,6 +45,7 @@ dependencies {
     implementation(Libraries.Kotlin.stdLib)
     implementation(Libraries.Android.ktxCore)
     implementation(Libraries.Android.appCompat)
+    implementation(Libraries.Android.activity)
     implementation(Libraries.Android.constraintLayout)
     implementation(Libraries.Firebase.firebaseAuth)
     implementation(Libraries.Firebase.playServiceAuth)

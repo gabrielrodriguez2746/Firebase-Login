@@ -14,12 +14,18 @@ class LoginViewModel(
     private val _data: MutableLiveData<User> = MutableLiveData()
     val data get() = _data
 
-    fun onLogin() {
-        viewModelScope.launch {
-            val user = withContext(Dispatchers.Default) {
-                repository.login()
+    fun login() {
+
+        viewModelScope.launch(Dispatchers.Main) {
+            try {
+                val user = withContext(Dispatchers.IO) {
+                    repository.login()
+                }
+                _data.postValue(user)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            } finally {
             }
-            _data.postValue(user)
         }
     }
 

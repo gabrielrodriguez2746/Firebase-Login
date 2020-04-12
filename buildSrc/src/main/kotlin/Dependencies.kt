@@ -31,10 +31,12 @@ object Libraries {
             const val jetPack = "1.1.0"
             const val constraintLayout = "1.1.3"
             const val lifeCycle = "2.2.0"
+            const val activity = "1.1.0"
         }
 
         const val appCompat = "androidx.appcompat:appcompat:${Versions.jetPack}"
         const val ktxCore = "androidx.core:core-ktx:${Versions.ktx}"
+        const val activity = "androidx.activity:activity-ktx:${Versions.activity}"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
         const val viewModelLifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifeCycle}"
     }
