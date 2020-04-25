@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Family Chat</string>
+    <string name="login.hello_message">Hello to this cool app</string>
+    <string name="login.hello_message_login">We need you to login</string>
+    <string name="login.sign_in_button">Click here to login</string>
 </resources>

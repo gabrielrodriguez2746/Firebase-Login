@@ -1,3 +1,3 @@
-include(":chat")
-include(":login")
+include(":features:chat")
+include(":features:login")
 include(":app")

@@ -3,7 +3,7 @@ const val kotlin = "1.3.21"
 object Build {
 
     private object Versions {
-        const val buildTools = "4.0.0-beta03"
+        const val buildTools = "4.0.0-beta05"
         const val googleServices = "4.3.3"
     }
 
@@ -71,6 +71,16 @@ object Libraries {
         }
 
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.core}"
+    }
+
+    object Externals {
+
+        private object Versions {
+            const val timber = "4.7.1"
+        }
+
+        const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+
     }
 
 }

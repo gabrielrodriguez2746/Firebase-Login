@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.firebase.login.data.LoginRepository
 import com.firebase.login.databinding.ActivityMainBinding
+import com.firebase.login.viewModels.LoginViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -42,12 +44,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        viewModel.data.observe(this,
-//            Observer {
-//                Toast.makeText(this, "User :: $it", Toast.LENGTH_SHORT).show()
-//            })
-        binding.button.setOnClickListener {
-            startActivityForResult(client.signInIntent, 1)
+        viewModel.state.observe(this,
+            Observer {
+                Toast.makeText(this, "State :: $it", Toast.LENGTH_SHORT).show()
+                processState(it)
+            })
+        viewModel.login()
+    }
+
+    private fun processState(state: LoginViewModel.LoginViewModelState) {
+        when(state) {
+            LoginViewModel.LoginViewModelState.NotLoggedUserError -> {
+                binding.textView.text = "Un momento"//getString(R.string.login)
+                binding.button.show()
+            }
         }
     }
 

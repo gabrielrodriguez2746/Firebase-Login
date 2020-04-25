@@ -41,7 +41,7 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
-    implementation(project(":login"))
+    implementation(project(":features:login"))
     implementation(Libraries.Kotlin.stdLib)
     implementation(Libraries.Android.ktxCore)
     implementation(Libraries.Android.appCompat)
@@ -49,6 +49,7 @@ dependencies {
     implementation(Libraries.Android.constraintLayout)
     implementation(Libraries.Firebase.firebaseAuth)
     implementation(Libraries.Firebase.playServiceAuth)
+    implementation(Libraries.Externals.timber)
 
     testImplementation(Libraries.Test.junit4)
 

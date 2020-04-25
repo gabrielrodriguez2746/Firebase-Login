@@ -37,6 +37,7 @@ dependencies {
     implementation(Libraries.Firebase.firebaseAuth)
     implementation(Libraries.Firebase.playServiceAuth)
     implementation(Libraries.Coroutines.core)
+    implementation(Libraries.Externals.timber)
 
     testImplementation(Libraries.Test.junit4)
 
