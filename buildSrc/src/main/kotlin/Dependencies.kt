@@ -3,7 +3,7 @@ const val kotlin = "1.3.21"
 object Build {
 
     private object Versions {
-        const val buildTools = "4.0.0-beta03"
+        const val buildTools = "4.0.0-beta05"
         const val googleServices = "4.3.3"
     }
 
@@ -30,11 +30,15 @@ object Libraries {
             const val ktx = "1.2.0"
             const val jetPack = "1.1.0"
             const val constraintLayout = "1.1.3"
+            const val lifeCycle = "2.2.0"
+            const val activity = "1.1.0"
         }
 
         const val appCompat = "androidx.appcompat:appcompat:${Versions.jetPack}"
         const val ktxCore = "androidx.core:core-ktx:${Versions.ktx}"
+        const val activity = "androidx.activity:activity-ktx:${Versions.activity}"
         const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
+        const val viewModelLifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifeCycle}"
     }
 
     object Test {
@@ -49,6 +53,35 @@ object Libraries {
         const val espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     }
 
+    object Firebase {
+        private object Versions {
+            const val playServiceAuth = "17.0.0"
+            const val firebaseAuth = "19.3.0"
+        }
+
+        const val firebaseAuth = "com.google.firebase:firebase-auth:${Versions.firebaseAuth}"
+        const val playServiceAuth = "com.google.android.gms:play-services-auth:${Versions.playServiceAuth}"
+
+    }
+
+    object Coroutines {
+
+        private object Versions {
+            const val core = "1.3.5"
+        }
+
+        const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.core}"
+    }
+
+    object Externals {
+
+        private object Versions {
+            const val timber = "4.7.1"
+        }
+
+        const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+
+    }
 
 }
 
