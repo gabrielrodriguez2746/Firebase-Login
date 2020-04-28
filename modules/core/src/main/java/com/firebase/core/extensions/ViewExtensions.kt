@@ -1,4 +1,4 @@
-package com.firebase.login
+package com.firebase.core.extensions
 
 import android.view.View
 

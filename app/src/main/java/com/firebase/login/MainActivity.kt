@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.firebase.core.extensions.show
 import com.firebase.login.data.LoginRepository
 import com.firebase.login.databinding.ActivityMainBinding
 import com.firebase.login.viewModels.LoginViewModel

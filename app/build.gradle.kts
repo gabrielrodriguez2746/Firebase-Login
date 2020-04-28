@@ -1,47 +1,22 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("android.extensions")
 }
 
+apply(from = "$rootDir/buildSrc/android.kts")
+
 android {
-    compileSdkVersion(AndroidSdk.compile)
 
     defaultConfig {
         applicationId = "com.firebase.login"
-        minSdkVersion(AndroidSdk.min)
-        targetSdkVersion(AndroidSdk.target)
-        versionCode = 1
-        versionName = "1.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    viewBinding {
-        isEnabled = true
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions.jvmTarget = "1.8"
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 
     implementation(project(":features:login"))
+    implementation(project(":modules:core"))
     implementation(Libraries.Kotlin.stdLib)
     implementation(Libraries.Android.ktxCore)
     implementation(Libraries.Android.appCompat)
